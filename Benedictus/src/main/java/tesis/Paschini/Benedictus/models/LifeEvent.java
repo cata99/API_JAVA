@@ -7,6 +7,8 @@ import java.util.Date;
 @Table(name="life_events")
 public class LifeEvent {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private Date date;
     private String label;

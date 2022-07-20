@@ -9,6 +9,8 @@ import java.util.Set;
 @Table(name="users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     private Boolean referent;
     private Date dateOfStart;

@@ -8,6 +8,8 @@ import java.util.Set;
 @Table(name="authorities")
 public class Authority {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     @Column(name = "label", nullable = false)
     private String label;

@@ -9,6 +9,8 @@ import java.util.Set;
 @Table(name = "movements")
 public class Movement {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     @Column(name="user_id")
     private User userId;

@@ -8,6 +8,8 @@ import java.util.Set;
 @Table(name="institutions")
 public class Institution {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     private String phone;
     private String name;

@@ -8,6 +8,8 @@ import java.util.Set;
 @Table(name="groups")
 public class Group {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "institution_id", referencedColumnName = "id")

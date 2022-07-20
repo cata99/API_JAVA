@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name="authorities_type")
 public class AuthorityType {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String service;

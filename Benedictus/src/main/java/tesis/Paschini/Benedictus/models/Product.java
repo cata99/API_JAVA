@@ -8,6 +8,8 @@ import java.util.Set;
 @Table(name="products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     private String name;
     private String typeOfProduct;

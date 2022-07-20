@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name="attributes")
 public class Attribute {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
@@ -23,8 +25,7 @@ public class Attribute {
         this.unitId = unitId;
     }
 
-    @Id
-    //TODO generation strategy
+
     public Long getId() {
         return id;
     }

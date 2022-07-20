@@ -8,6 +8,8 @@ import java.util.Date;
 @Table(name = "reports")
 public class Report {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "institution_id")

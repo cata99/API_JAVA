@@ -1,7 +1,6 @@
 package tesis.Paschini.Benedictus.models;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,6 +8,8 @@ import java.util.Set;
 @Table(name="persons")
 public class People {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
     private String firstName;
     private String lastName;
