@@ -10,7 +10,9 @@ public class LifeEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    @Column(name="date")
     private Date date;
+    @Column(name="label")
     private String label;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "people_id")
@@ -38,7 +40,6 @@ public class LifeEvent {
         this.people = people;
     }
 
-    @Column(name="date")
     public Date getDate() {
         return date;
     }
@@ -47,7 +48,7 @@ public class LifeEvent {
         this.date = date;
     }
 
-    @Column(name="label")
+
     public String getLabel() {
         return label;
     }

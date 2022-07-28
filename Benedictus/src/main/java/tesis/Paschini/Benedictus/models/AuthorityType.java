@@ -10,6 +10,7 @@ public class AuthorityType {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column(name="service")
     private String service;
 
     public AuthorityType(Long id, String service) {
@@ -17,8 +18,6 @@ public class AuthorityType {
         this.service = service;
     }
 
-    @Id
-    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -27,7 +26,6 @@ public class AuthorityType {
         this.id = id;
     }
 
-    @Column(name="service")
     public String getService() {
         return service;
     }

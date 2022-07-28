@@ -12,9 +12,13 @@ public class Attribute {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
+    @Column(name="field")
     private String field;
+    @Column(name="value")
     private String value;
     //TODO ver esta relacion
+    @ManyToOne
+    @JoinColumn(name = "unit_id")
     private Unit unitId;
 
     public Attribute(Long id, Product product, String field, String value, Unit unitId) {
@@ -39,7 +43,6 @@ public class Attribute {
         this.product = product;
     }
 
-    @Column(name="field")
     public String getField() {
         return field;
     }
@@ -48,7 +51,6 @@ public class Attribute {
         this.field = field;
     }
 
-    @Column(name="value")
     public String getValue() {
         return value;
     }

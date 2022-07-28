@@ -11,7 +11,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name="name")
     private String name;
+    @Column(name="type_of_product")
     private String typeOfProduct;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")
@@ -30,13 +32,10 @@ public class Product {
         this.typeOfProduct = typeOfProduct;
     }
 
-    @Id
-    //TODO generation strategy
     public Long getId() {
         return id;
     }
 
-    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -45,7 +44,6 @@ public class Product {
         this.name = name;
     }
 
-    @Column(name="type_of_product")
     public String getTypeOfProduct() {
         return typeOfProduct;
     }

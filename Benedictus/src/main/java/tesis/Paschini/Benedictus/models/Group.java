@@ -14,6 +14,7 @@ public class Group {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "institution_id", referencedColumnName = "id")
     private Institution institution;
+    @Column(name="label")
     private String label;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "group")
@@ -49,7 +50,6 @@ public class Group {
         this.users = users;
     }
 
-    @Column(name="label")
     public String getLabel() {
         return label;
     }

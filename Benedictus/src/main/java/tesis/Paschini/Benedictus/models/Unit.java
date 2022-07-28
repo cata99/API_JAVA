@@ -3,26 +3,25 @@ package tesis.Paschini.Benedictus.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="unit")
+@Table(name = "unit")
 public class Unit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name = "unit")
     private String unit;
+
 
     public Unit(Long id, String unit) {
         this.id = id;
         this.unit = unit;
     }
 
-    @Id
-    //TODO generation strategy
     public Long getId() {
         return id;
     }
 
-    @Column(name="unit")
     public String getUnit() {
         return unit;
     }

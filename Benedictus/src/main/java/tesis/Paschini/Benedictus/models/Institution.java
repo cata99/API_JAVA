@@ -11,9 +11,13 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name = "phone", nullable = false, unique = true)
     private String phone;
+    @Column(name="name", nullable = false)
     private String name;
+    @Column(name = "location", nullable = false, unique = true)
     private String location;
+    @Column(name = "description")
     private String description;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "institution", fetch = FetchType.LAZY)
     private Group group;
@@ -60,7 +64,6 @@ public class Institution {
         return id;
     }
 
-    @Column(name = "phone", nullable = false, unique = true)
     public String getPhone() {
         return phone;
     }
@@ -69,7 +72,6 @@ public class Institution {
         this.phone = phone;
     }
 
-    @Column(name="name", nullable = false)
     public String getName() {
         return name;
     }
@@ -78,7 +80,6 @@ public class Institution {
         this.name = name;
     }
 
-    @Column(name = "location", nullable = false, unique = true)
     public String getLocation() {
         return location;
     }
@@ -87,7 +88,6 @@ public class Institution {
         this.location = location;
     }
 
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }

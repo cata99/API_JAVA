@@ -11,6 +11,7 @@ public class Disease {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name="label", nullable = false)
     private String label;
 
     @ManyToMany(cascade = {
@@ -33,7 +34,6 @@ public class Disease {
         return id;
     }
 
-    @Column(name="label", nullable = false)
     public String getLabel() {
         return label;
     }

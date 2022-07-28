@@ -10,19 +10,17 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
-
+    @Column(name="label", unique = true, nullable = false)
     private String label;
 
     public Role(Long id, String label) {
         this.id = id;
         this.label = label;
     }
-
     public Long getId() {
         return id;
     }
 
-    @Column(name="label", unique = true, nullable = false)
     public String getLabel() {
         return label;
     }

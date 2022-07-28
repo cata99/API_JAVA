@@ -11,11 +11,17 @@ public class People {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name="first_name")
     private String firstName;
+    @Column(name="last_name")
     private String lastName;
+    @Column(name="phone")
     private String phone;
+    @Column(name="identiication_number")
     private String identificationNumber;
+    @Column(name = "gender")
     private String gender;
+    @Column(name="email")
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -35,15 +41,10 @@ public class People {
         this.email = email;
         this.user = user;
     }
-
-    @Id
-    //TODO ver estrategia del id
-    @GeneratedValue()
     public Long getId() {
         return id;
     }
 
-    @Column(name="first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -52,7 +53,6 @@ public class People {
         this.firstName = firstName;
     }
 
-    @Column(name="last_name")
     public String getLastName() {
         return lastName;
     }
@@ -61,7 +61,6 @@ public class People {
         this.lastName = lastName;
     }
 
-    @Column(name="phone")
     public String getPhone() {
         return phone;
     }
@@ -70,7 +69,6 @@ public class People {
         this.phone = phone;
     }
 
-    @Column(name="identiication_number")
     public String getIdentificationNumber() {
         return identificationNumber;
     }
@@ -78,8 +76,6 @@ public class People {
     public void setIdentificationNumber(String identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
-
-    @Column(name = "gender")
     public String getGender() {
         return gender;
     }
@@ -88,7 +84,6 @@ public class People {
         this.gender = gender;
     }
 
-    @Column(name="email")
     public String getEmail() {
         return email;
     }

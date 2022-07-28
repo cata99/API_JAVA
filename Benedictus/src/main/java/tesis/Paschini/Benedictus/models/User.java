@@ -12,7 +12,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private final Long id;
+    @Column(name="referent")
     private Boolean referent;
+    @Column(name = "date_of_start")
     private Date dateOfStart;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -32,11 +34,18 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userId")
     private Set<Report> reports = new HashSet<>();
     private Long groupId;
+    @Column(name="user", nullable = false, unique = true)
     private String user;
+    @Column(name="password", nullable = false, unique = true)
     private String password;
+    @Column(name ="token", nullable = false, unique = true)
     private String token;
+    @Column(name ="expirationDate")
     private Date expirationDate;
+    @Column(name="people_id", nullable = false)
     private Long peopleId;
+    @Column(name="active", nullable = false)
+    private Boolean active;
 
     public User(Long id, Boolean referent, Date dateOfStart, Set<Role> roles, Long groupId, String user, String password, Long peopleId) {
         this.id = id;
@@ -49,14 +58,10 @@ public class User {
         this.peopleId = peopleId;
     }
 
-    @Id
-    //TODO ver estrategia del id
-    @GeneratedValue()
     public Long getId() {
         return id;
     }
 
-    @Column(name="referent")
     public Boolean getReferent() {
         return referent;
     }
@@ -65,7 +70,6 @@ public class User {
         this.referent = referent;
     }
 
-    @Column(name = "date_of_start")
     public Date getDateOfStart() {
         return dateOfStart;
     }
@@ -82,7 +86,6 @@ public class User {
         this.roles = roles;
     }
 
-    //TODO relation
     public Long getGroupId() {
         return groupId;
     }
@@ -91,7 +94,6 @@ public class User {
         this.groupId = groupId;
     }
 
-    @Column(name="user", nullable = false, unique = true)
     public String getUser() {
         return user;
     }
@@ -100,7 +102,6 @@ public class User {
         this.user = user;
     }
 
-    @Column(name="password", nullable = false, unique = true)
     public String getPassword() {
         return password;
     }
@@ -109,7 +110,6 @@ public class User {
         this.password = password;
     }
 
-    @Column(name ="token", nullable = false, unique = true)
     public String getToken() {
         return token;
     }
@@ -118,7 +118,6 @@ public class User {
         this.token = token;
     }
 
-    @Column(name ="expirationDate")
     public Date getExpirationDate() {
         return expirationDate;
     }
@@ -127,12 +126,19 @@ public class User {
         this.expirationDate = expirationDate;
     }
 
-    @Column(name="people_id", nullable = false)
     public Long getPeopleId() {
         return peopleId;
     }
 
     public void setPeopleId(Long peopleId) {
         this.peopleId = peopleId;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

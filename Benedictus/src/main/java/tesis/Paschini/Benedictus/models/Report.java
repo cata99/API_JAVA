@@ -52,13 +52,9 @@ public class Report {
         this.maleQuantity = maleQuantity;
     }
 
-    @Id
-    //TODO ver estrategia del id
-    @GeneratedValue()
     public Long getId() {
         return id;
     }
-
 
     public Institution getInstitutionId() {
         return institutionId;
