@@ -1,34 +1,33 @@
 package tesis.Paschini.Benedictus.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.AuthorityType;
-import tesis.Paschini.Benedictus.repository.AuthorityTypeRepository;
+import tesis.Paschini.Benedictus.service.AuthorityTypeService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/AuthorityTypes/")
 public class AuthorityTypeController {
 
-    private AuthorityTypeRepository authorityTypeRepository;
+    private AuthorityTypeService authorityTypeService;
 
     @GetMapping
     public List<AuthorityType> getAllAuthorityType() {
-        return authorityTypeRepository.findAll();
+        return authorityTypeService.getAllAuthorityType();
     }
 
     @PostMapping
     public AuthorityType createAttributeType(@RequestBody AuthorityType authorityType) {
-        return authorityTypeRepository.save(authorityType);
+        return authorityTypeService.saveAuthorityType(authorityType);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<AuthorityType> getAuthorityTypeById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        AuthorityType authorityType = authorityTypeRepository.findById(id)
+        AuthorityType authorityType = authorityTypeService.getAuthorityTypeById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("authorityType not exist with id:" + id));
 
         return ResponseEntity.ok(authorityType);
@@ -36,23 +35,20 @@ public class AuthorityTypeController {
 
     @PutMapping("{id}")
     public ResponseEntity<AuthorityType> updateAuthorityType( @PathVariable(value = "id" ) Long id , @RequestBody AuthorityType authorityTypeDetails) throws ResourceNotFoundException{
-        AuthorityType authorityType= authorityTypeRepository.findById(id)
+        AuthorityType authorityType= authorityTypeService.getAuthorityTypeById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("authorityType not exist with id:" + id));
 
         authorityType.setService(authorityType.getService());
 
-        final AuthorityType updatedAuthorityType = authorityTypeRepository.save(authorityType);
+        final AuthorityType updatedAuthorityType = authorityTypeService.updateAuthorityType(authorityType);
         return ResponseEntity.ok(updatedAuthorityType);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long authorityTypeId) throws ResourceNotFoundException {
-        AuthorityType authorityType= authorityTypeRepository.findById(authorityTypeId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + authorityTypeId));
+    public ResponseEntity<String> deleteAttribute (@PathVariable(value = "id") Long attributeId) throws ResourceNotFoundException {
+        authorityTypeService.deleteAuthorityType(attributeId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 
 }

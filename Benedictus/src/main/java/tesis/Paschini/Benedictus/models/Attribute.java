@@ -30,7 +30,7 @@ public class Attribute {
     }
 
 
-    public Long getId() {
+    public static Long getId() {
         return id;
     }
 
