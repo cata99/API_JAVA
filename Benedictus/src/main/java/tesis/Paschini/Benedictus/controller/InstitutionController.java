@@ -1,36 +1,35 @@
 package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.Institution;
-import tesis.Paschini.Benedictus.repository.InstitutionRepository;
+import tesis.Paschini.Benedictus.service.InstitutionService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Institutions/")
 public class InstitutionController {
 
     @Autowired
-    private InstitutionRepository institutionRepository;
+    private InstitutionService institutionService;
 
     @GetMapping
     public List<Institution> getAllInstitution() {
-        return institutionRepository.findAll();
+        return institutionService.getAllInstitution();
     }
 
     @PostMapping
     public Institution createAttribute(@RequestBody Institution institution) {
-        return institutionRepository.save(institution);
+        return institutionService.saveInstitution(institution);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Institution> getInstitutionById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        Institution institution = institutionRepository.findById(id)
+        Institution institution = institutionService.getInstitutionById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("institution not exist with id:" + id));
 
         return ResponseEntity.ok(institution);
@@ -38,7 +37,7 @@ public class InstitutionController {
 
     @PutMapping("{id}")
     public ResponseEntity<Institution> updateInstitution( @PathVariable(value = "id" ) Long id , @RequestBody Institution institutionDetails) throws ResourceNotFoundException{
-        Institution institution= institutionRepository.findById(id)
+        Institution institution= institutionService.getInstitutionById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("institution not exist with id:" + id));
 
         institution.setName(institutionDetails.getName());
@@ -46,17 +45,14 @@ public class InstitutionController {
         institution.setLocation(institutionDetails.getLocation());
         institution.setPhone(institutionDetails.getPhone());
 
-        final Institution updatedInstitution = institutionRepository.save(institution);
+        final Institution updatedInstitution = institutionService.updateInstitution(institution);
         return ResponseEntity.ok(updatedInstitution);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long institutionId) throws ResourceNotFoundException {
-        Institution institution= institutionRepository.findById(institutionId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + institutionId));
+    public ResponseEntity<String> deleteInstitution (@PathVariable(value = "id") Long attributeId) throws ResourceNotFoundException {
+        institutionService.deleteInstitution(attributeId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 }

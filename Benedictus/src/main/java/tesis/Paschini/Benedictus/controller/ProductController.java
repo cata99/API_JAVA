@@ -1,36 +1,35 @@
 package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.Product;
-import tesis.Paschini.Benedictus.repository.ProductRepository;
+import tesis.Paschini.Benedictus.service.ProductService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Products/")
 public class ProductController {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductService productService;
 
     @GetMapping
     public List<Product> getProducts() {
-        return productRepository.findAll();
+        return productService.getAllProduct();
     }
 
     @PostMapping
     public Product createAttribute(@RequestBody Product product) {
-        return productRepository.save(product);
+        return productService.saveProduct(product);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Product> getProductById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        Product product = productRepository.findById(id)
+        Product product = productService.getProductById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("product not exist with id:" + id));
 
         return ResponseEntity.ok(product);
@@ -38,23 +37,20 @@ public class ProductController {
 
     @PutMapping("{id}")
     public ResponseEntity<Product> updateProduct( @PathVariable(value = "id" ) Long id , @RequestBody Product productDetails) throws ResourceNotFoundException{
-        Product product= productRepository.findById(id)
+        Product product= productService.getProductById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("product not exist with id:" + id));
 
         product.setTypeOfProduct(productDetails.getTypeOfProduct());
         product.setName(productDetails.getName());
 
-        final Product updatedProduct = productRepository.save(product);
+        final Product updatedProduct = productService.saveProduct(product);
         return ResponseEntity.ok(updatedProduct);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long productId) throws ResourceNotFoundException {
-        Product product= productRepository.findById(productId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + productId));
+    public ResponseEntity<String> deleteProduct (@PathVariable(value = "id") Long productId) throws ResourceNotFoundException {
+        productService.deleteProduct(productId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 }

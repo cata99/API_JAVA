@@ -1,36 +1,35 @@
 package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.People;
-import tesis.Paschini.Benedictus.repository.PeopleRepository;
+import tesis.Paschini.Benedictus.service.PeopleService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/People/")
 public class PeopleController {
 
     @Autowired
-    private PeopleRepository peopleRepository;
+    private PeopleService peopleService;
 
     @GetMapping
     public List<People> getAllPeople() {
-        return peopleRepository.findAll();
+        return peopleService.getAllPeople();
     }
 
     @PostMapping
     public People createAttribute(@RequestBody People people) {
-        return peopleRepository.save(people);
+        return peopleService.savePeople(people);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<People> getPeopleById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        People people = peopleRepository.findById(id)
+        People people = peopleService.getPeopleById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("people not exist with id:" + id));
 
         return ResponseEntity.ok(people);
@@ -38,7 +37,7 @@ public class PeopleController {
 
     @PutMapping("{id}")
     public ResponseEntity<People> updatePeople( @PathVariable(value = "id" ) Long id , @RequestBody People peopleDetails) throws ResourceNotFoundException{
-        People people= peopleRepository.findById(id)
+        People people= peopleService.getPeopleById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("People not exist with id:" + id));
 
         people.setEmail(peopleDetails.getEmail());
@@ -48,17 +47,14 @@ public class PeopleController {
         people.setPhone(peopleDetails.getPhone());
         people.setIdentificationNumber(peopleDetails.getIdentificationNumber());
 
-        final People updatedPeople = peopleRepository.save(people);
+        final People updatedPeople = peopleService.savePeople(people);
         return ResponseEntity.ok(updatedPeople);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long peopleId) throws ResourceNotFoundException {
-        People people= peopleRepository.findById(peopleId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + peopleId));
+    public ResponseEntity<String> deletePeople (@PathVariable(value = "id") Long peopleId) throws ResourceNotFoundException {
+        peopleService.deletePeople(peopleId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 }

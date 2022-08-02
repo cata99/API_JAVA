@@ -1,36 +1,35 @@
 package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.Report;
-import tesis.Paschini.Benedictus.repository.ReportRepository;
+import tesis.Paschini.Benedictus.service.ReportService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Reports/")
 public class ReportController {
 
     @Autowired
-    private ReportRepository reportRepository;
+    private ReportService reportService;
 
     @GetMapping
     public List<Report> getAllReport() {
-        return reportRepository.findAll();
+        return reportService.getAllReport();
     }
 
     @PostMapping
     public Report createAttribute(@RequestBody Report report) {
-        return reportRepository.save(report);
+        return reportService.saveReport(report);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Report> getReportById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        Report report = reportRepository.findById(id)
+        Report report = reportService.getReportById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("report not exist with id:" + id));
 
         return ResponseEntity.ok(report);
@@ -38,7 +37,7 @@ public class ReportController {
 
     @PutMapping("{id}")
     public ResponseEntity<Report> updateReport( @PathVariable(value = "id" ) Long id , @RequestBody Report reportDetails) throws ResourceNotFoundException{
-        Report report= reportRepository.findById(id)
+        Report report= reportService.getReportById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("report not exist with id:" + id));
 
         report.setDate(reportDetails.getDate());
@@ -49,17 +48,14 @@ public class ReportController {
         report.setMovementId(reportDetails.getMovementId());
         report.setUserId(reportDetails.getUserId());
 
-        final Report updatedReport = reportRepository.save(report);
+        final Report updatedReport = reportService.saveReport(report);
         return ResponseEntity.ok(updatedReport);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long reportId) throws ResourceNotFoundException {
-        Report report= reportRepository.findById(reportId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + reportId));
+    public ResponseEntity<String> deleteReport (@PathVariable(value = "id") Long reportId) throws ResourceNotFoundException {
+        reportService.deleteReport(reportId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 }

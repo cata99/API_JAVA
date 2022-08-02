@@ -1,36 +1,35 @@
 package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.models.Role;
-import tesis.Paschini.Benedictus.repository.RoleRepository;
+import tesis.Paschini.Benedictus.service.RoleService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Roles/")
 public class RoleController {
 
     @Autowired
-    private RoleRepository roleRepository;
+    private RoleService roleService;
 
     @GetMapping
     public List<Role> getAllRole() {
-        return roleRepository.findAll();
+        return roleService.getAllRole();
     }
 
     @PostMapping
     public Role createAttribute(@RequestBody Role role) {
-        return roleRepository.save(role);
+        return roleService.saveRole(role);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Role> getRoleById(@PathVariable (value = "id")long id) throws ResourceNotFoundException {
-        Role role = roleRepository.findById(id)
+        Role role = roleService.getRoleById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("role not exist with id:" + id));
 
         return ResponseEntity.ok(role);
@@ -38,22 +37,19 @@ public class RoleController {
 
     @PutMapping("{id}")
     public ResponseEntity<Role> updateRole( @PathVariable(value = "id" ) Long id , @RequestBody Role roleDetails) throws ResourceNotFoundException{
-        Role role= roleRepository.findById(id)
+        Role role= roleService.getRoleById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Role not exist with id:" + id));
 
         role.setLabel(roleDetails.getLabel());
-        final Role updatedRole = roleRepository.save(role);
+        final Role updatedRole = roleService.updateRole(role);
         return ResponseEntity.ok(updatedRole);
     }
 
     @DeleteMapping("{id}")
-    public Map<String, Boolean> deleteUser (@PathVariable(value = "id") Long roleId) throws ResourceNotFoundException {
-         Role role= roleRepository.findById(roleId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not exist with id:" + roleId));
+    public ResponseEntity<String> deleteReport (@PathVariable(value = "id") Long reportId) throws ResourceNotFoundException {
+        roleService.deleteRole(reportId);
 
-        Map < String, Boolean > response = new HashMap< >();
-        response.put("deleted", Boolean.TRUE);
-        return response;
+        return new ResponseEntity<String>("Employee deleted successfully!.", HttpStatus.OK);
     }
 
 }
