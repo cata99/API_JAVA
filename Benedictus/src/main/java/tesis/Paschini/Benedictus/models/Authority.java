@@ -1,8 +1,6 @@
 package tesis.Paschini.Benedictus.models;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name="authorities")
@@ -10,37 +8,34 @@ public class Authority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private final Long id;
+    private Long id;
     @Column(name = "label", nullable = false)
     private String label;
-    @Column(name="phone", nullable = true, unique = true)
+    @Column(name="phone", unique = true)
     private String phone;
     @Column(name = "location", nullable = false, unique = true)
     private String location;
-    @OneToMany
-    @JoinColumn(name="type_id", referencedColumnName = "id")
-    private AuthorityType typeId;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    }, fetch = FetchType.EAGER,
-            mappedBy = "authorities")
-    private Set<Institution> institutions = new HashSet<>();
 
-    public Authority(Long id, String label, String phone, String location, AuthorityType typeId) {
+    public Authority() {
+    }
+
+    public Authority(Long id, String label, String phone, String location) {
         this.id = id;
         this.label = label;
         this.phone = phone;
         this.location = location;
-        this.typeId = typeId;
+
     }
 
     @Id
-    //TODO ver estrategia del id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLabel() {
@@ -67,11 +62,4 @@ public class Authority {
         this.location = location;
     }
 
-    public AuthorityType getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(AuthorityType typeId) {
-        this.typeId = typeId;
-    }
 }

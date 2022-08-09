@@ -14,30 +14,22 @@ public class LifeEvent {
     private Date date;
     @Column(name="label")
     private String label;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "people_id")
-    private People people;
 
-    public LifeEvent(Long id, Date date, String label, People people) {
+    public LifeEvent() {
+    }
+
+    public LifeEvent(Long id, Date date, String label) {
         this.id = id;
         this.date = date;
         this.label = label;
-        this.people = people;
     }
 
-    @Id
-    //TODO ver estrategia del id
-    @GeneratedValue()
     public Long getId() {
         return id;
     }
 
-    public People getPeople() {
-        return people;
-    }
-
-    public void setPeople(People people) {
-        this.people = people;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDate() {

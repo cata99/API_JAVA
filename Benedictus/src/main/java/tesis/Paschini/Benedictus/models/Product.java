@@ -1,8 +1,6 @@
 package tesis.Paschini.Benedictus.models;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name="products")
@@ -10,45 +8,45 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private final Long id;
-    @Column(name="name")
-    private String name;
-    @Column(name="type_of_product")
-    private String typeOfProduct;
+    private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")
-    private Set<Attribute> attributes = new HashSet<>();
+    @Column(name="label")
+    private String label;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    }, fetch = FetchType.EAGER,
-            mappedBy = "products")
-    private Set<Movement> movements = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "product_type_id")
+    private ProductType productType;
 
-    public Product(Long id, String name, String typeOfProduct) {
-        this.id = id;
-        this.name = name;
-        this.typeOfProduct = typeOfProduct;
+    public Product() {
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
+    }
+
+
+    public Product(String label, ProductType productType) {
+        this.label = label;
+        this.productType = productType;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLabel() {
+        return label;
     }
 
-    public String getTypeOfProduct() {
-        return typeOfProduct;
-    }
-
-    public void setTypeOfProduct(String typeOfProduct) {
-        this.typeOfProduct = typeOfProduct;
+    public void setLabel(String label) {
+        this.label = label;
     }
 }

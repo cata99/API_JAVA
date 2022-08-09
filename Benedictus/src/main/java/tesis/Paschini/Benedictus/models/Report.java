@@ -10,19 +10,7 @@ public class Report {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private final Long id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "institution_id")
-    private Institution institutionId;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User userId;
-
-    //TODO ver esta relacion con fede
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "movement_id", referencedColumnName = "id")
-    private Movement movementId;
+    private Long id;
     @Column(name = "description", nullable = false)
     private String description;
     @Column(name = "date", nullable = false)
@@ -32,20 +20,11 @@ public class Report {
     @Column(name = "male_quantity", nullable = false)
     private String maleQuantity;
 
-    public Report(Long id, Institution institutionId, User userId, Movement movementId, String description, Date date) {
-        this.id = id;
-        this.institutionId = institutionId;
-        this.userId = userId;
-        this.movementId = movementId;
-        this.description = description;
-        this.date = date;
+    public Report() {
     }
 
-    public Report(Long id, Institution institutionId, User userId, Movement movementId, String description, Date date, String femaleQuantity, String maleQuantity) {
+    public Report(Long id, String description, Date date, String femaleQuantity, String maleQuantity) {
         this.id = id;
-        this.institutionId = institutionId;
-        this.userId = userId;
-        this.movementId = movementId;
         this.description = description;
         this.date = date;
         this.femaleQuantity = femaleQuantity;
@@ -56,28 +35,8 @@ public class Report {
         return id;
     }
 
-    public Institution getInstitutionId() {
-        return institutionId;
-    }
-
-    public void setInstitutionId(Institution institutionId) {
-        this.institutionId = institutionId;
-    }
-
-    public User getUserId() {
-        return userId;
-    }
-
-    public void setUserId(User userId) {
-        this.userId = userId;
-    }
-
-    public Movement getMovementId() {
-        return movementId;
-    }
-
-    public void setMovementId(Movement movementId) {
-        this.movementId = movementId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDescription() {

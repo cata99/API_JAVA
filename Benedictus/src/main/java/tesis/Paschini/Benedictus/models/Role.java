@@ -9,9 +9,16 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private final Long id;
+    private Long id;
     @Column(name="label", unique = true, nullable = false)
     private String label;
+
+    public Role() {
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Role(Long id, String label) {
         this.id = id;
@@ -28,4 +35,5 @@ public class Role {
     public void setLabel(String label) {
         this.label = label;
     }
+
 }

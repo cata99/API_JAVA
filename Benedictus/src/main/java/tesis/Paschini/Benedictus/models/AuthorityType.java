@@ -13,6 +13,10 @@ public class AuthorityType {
     @Column(name="service")
     private String service;
 
+
+    public AuthorityType() {
+    }
+
     public AuthorityType(Long id, String service) {
         this.id = id;
         this.service = service;
@@ -25,6 +29,7 @@ public class AuthorityType {
     public void setId(Long id) {
         this.id = id;
     }
+
 
     public String getService() {
         return service;
