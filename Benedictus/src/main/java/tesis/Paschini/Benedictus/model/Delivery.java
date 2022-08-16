@@ -1,30 +1,36 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
+import java.util.Date;
+
 
 @Entity
-@Table(name="institution_disease")
-public class Institution_Disease {
+@Table(name="delivery")
+public class Delivery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column(name="date")
+    private Date date;
+
     @ManyToOne
     @JoinColumn(name = "institution_id")
     private Institution institution;
-    
-    @ManyToOne
-    @JoinColumn(name = "disease_id")
-    private Disease disease;
 
-    public Institution_Disease() {
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Delivery() {
     }
 
-    public Institution_Disease(Long id, Institution institution, Disease disease) {
+    public Delivery(Long id, Date date, Institution institution, User user) {
         this.id = id;
+        this.date = date;
         this.institution = institution;
-        this.disease = disease;
+        this.user = user;
     }
 
     public Long getId() {
@@ -35,6 +41,14 @@ public class Institution_Disease {
         this.id = id;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public Institution getInstitution() {
         return institution;
     }
@@ -43,11 +57,11 @@ public class Institution_Disease {
         this.institution = institution;
     }
 
-    public Disease getDisease() {
-        return disease;
+    public User getUser() {
+        return user;
     }
 
-    public void setDisease(Disease disease) {
-        this.disease = disease;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

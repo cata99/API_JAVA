@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,6 +14,18 @@ public class LifeEvent {
     private Date date;
     @Column(name="label")
     private String label;
+
+    @ManyToOne
+    @JoinColumn(name = "personal_information_id")
+    private PersonalInformation personalInformation;
+
+    public PersonalInformation getPersonalInformation() {
+        return personalInformation;
+    }
+
+    public void setPersonalInformation(PersonalInformation personalInformation) {
+        this.personalInformation = personalInformation;
+    }
 
     public LifeEvent() {
     }

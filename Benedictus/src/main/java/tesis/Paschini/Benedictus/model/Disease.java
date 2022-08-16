@@ -1,33 +1,31 @@
-package tesis.Paschini.Benedictus.models;
-
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="product_type")
-public class ProductType {
+@Table(name="diseases")
+public class Disease {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
-    @Column(name="label")
+    @Column(name="label", nullable = false)
     private String label;
 
-    public ProductType() {
+    public Disease() {
     }
 
-    public ProductType(Long id, String label) {
+    public Disease(Long id, String label) {
         this.id = id;
         this.label = label;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getLabel() {

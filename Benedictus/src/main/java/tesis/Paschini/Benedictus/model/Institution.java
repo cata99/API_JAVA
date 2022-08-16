@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 
 import javax.persistence.*;
@@ -18,6 +18,7 @@ public class Institution {
     private String location;
     @Column(name = "description")
     private String description;
+
 
     public Institution() {
     }

@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 
 import javax.persistence.*;
@@ -19,6 +19,15 @@ public class Report {
     private String femaleQuantity;
     @Column(name = "male_quantity", nullable = false)
     private String maleQuantity;
+    @ManyToOne
+    @JoinColumn(name = "institution_id")
+    private Institution institution;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
 
     public Report() {
     }
@@ -69,5 +78,31 @@ public class Report {
 
     public void setMaleQuantity(String maleQuantity) {
         this.maleQuantity = maleQuantity;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    public Institution getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
     }
 }

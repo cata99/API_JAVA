@@ -5,159 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1514b003-bdaf-401b-8f58-293cd80fa5e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Delivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Delivery_Quantity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Donation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Donation_Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Institution_Disease.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/ProductType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Product_Attribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DonationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AttributeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/DonationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/ProductTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/API_JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/API_JAVA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_83.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_bean_validators_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_boot_starter_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_data_rest_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_oas_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_webflux_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_webmvc_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_2_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_2_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_3_0_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_xml_3_0_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_3_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_3_0_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_2_5_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_2_0_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_2_0_0_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Benedictus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Benedictus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AttributeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AuthorityController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AuthorityTypeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DiseaseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/GroupController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/InstitutionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/LifeEventController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/MovementController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/PeopleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ReportController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/RoleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UnitController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Attribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Attribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/AuthorityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/AuthorityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Disease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Disease.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Institution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Institution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/LifeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/LifeEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Movement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/PersonalInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AttributeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AuthorityRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AuthorityTypeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/DiseaseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/GroupRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/InstitutionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/LifeEventRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/MovementRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/PeopleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/ProductRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/ReportRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/UnitRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/AttributeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/AuthorityService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/AuthorityTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/DiseaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/GroupService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/InstitutionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/LifeEventService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/MovementService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/PeopleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/ReportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/UnitService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/AttributeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/AuthorityServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/AuthorityTypeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/DiseaseServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/GroupServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/InstitutionServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/LifeEventServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/MovementServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/PeopleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/ProductServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/ReportServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/RoleServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/UnitServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/serviceImpl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Attribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Attribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/AuthorityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/AuthorityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Delivery_Quantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery_Quantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Disease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Disease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Donation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Donation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Donation_Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Donation_Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Institution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Institution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Institution_Disease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Institution_Disease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/LifeEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/LifeEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/PersonalInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/PersonalInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/ProductType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Product_Attribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Product_Attribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/AttributeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/AuthorityController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/AuthorityTypeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/DiseaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/GroupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/InstitutionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/LifeEventController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/MovementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/PeopleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/ReportController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UnitController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Attribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Attribute.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Authority.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/AuthorityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/AuthorityType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Disease.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Disease.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Institution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Institution.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/LifeEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/LifeEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Movement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/People.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/Unit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/AttributeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/AuthorityRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/AuthorityTypeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/DiseaseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/GroupRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/InstitutionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/LifeEventRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/MovementRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/PeopleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/ProductRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/ReportRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/UnitRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/UserRepository.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

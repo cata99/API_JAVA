@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 
@@ -19,18 +19,16 @@ public class Product {
 
     public Product() {
     }
+    public Product(String label, ProductType productType) {
+        this.label = label;
+        this.productType = productType;
+    }
 
     public ProductType getProductType() {
         return productType;
     }
 
     public void setProductType(ProductType productType) {
-        this.productType = productType;
-    }
-
-
-    public Product(String label, ProductType productType) {
-        this.label = label;
         this.productType = productType;
     }
 

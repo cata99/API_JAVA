@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -23,10 +23,34 @@ public class User {
     @Column(name = "expirationDate")
     private Date expirationDate;
 
+    @OneToOne
+    @JoinColumn(name = "personal_information_id")
+    private PersonalInformation personalInformation;
 
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
 
     @Column(name = "active", nullable = false)
     private Boolean active;
+
+    //TODO falta relacion con roles
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public PersonalInformation getPersonalInformation() {
+        return personalInformation;
+    }
+
+    public void setPersonalInformation(PersonalInformation personalInformation) {
+        this.personalInformation = personalInformation;
+    }
 
     public User() {
     }

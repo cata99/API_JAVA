@@ -1,10 +1,11 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
+
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="groups")
-public class Group {
+@Table(name="product_type")
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -13,21 +14,20 @@ public class Group {
     @Column(name="label")
     private String label;
 
-
-    public Group() {
+    public ProductType() {
     }
 
-    public Group(Long id, Institution institution, String label) {
+    public ProductType(Long id, String label) {
         this.id = id;
         this.label = label;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLabel() {

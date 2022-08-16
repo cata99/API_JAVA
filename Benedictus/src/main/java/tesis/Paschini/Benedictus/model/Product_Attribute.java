@@ -1,11 +1,10 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="donation_product")
-public class Donation_Product {
-
+@Table(name= "product_attribute")
+public class Product_Attribute {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -16,28 +15,24 @@ public class Donation_Product {
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "donation_id")
-    private Donation donation;
+    @JoinColumn(name = "attribute_id")
+    private Attribute attribute;
 
-    @Column(name="quantity")
     private Long quantity;
 
-    public Donation_Product() {
-    }
-
-    public Donation_Product(Long id, Product product, Donation donation, Long quantity) {
+    public Product_Attribute(Long id, Product product, Attribute attribute, Long quantity) {
         this.id = id;
         this.product = product;
-        this.donation = donation;
+        this.attribute = attribute;
         this.quantity = quantity;
     }
 
-    public Long getId() {
-        return id;
+    public Attribute getAttribute() {
+        return attribute;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAttribute(Attribute attribute) {
+        this.attribute = attribute;
     }
 
     public Product getProduct() {
@@ -48,14 +43,6 @@ public class Donation_Product {
         this.product = product;
     }
 
-    public Donation getDonation() {
-        return donation;
-    }
-
-    public void setDonation(Donation donation) {
-        this.donation = donation;
-    }
-
     public Long getQuantity() {
         return quantity;
     }
@@ -63,4 +50,5 @@ public class Donation_Product {
     public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
+
 }

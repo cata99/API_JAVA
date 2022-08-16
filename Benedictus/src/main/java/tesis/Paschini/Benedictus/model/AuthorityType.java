@@ -1,4 +1,4 @@
-package tesis.Paschini.Benedictus.models;
+package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 
@@ -12,6 +12,8 @@ public class AuthorityType {
 
     @Column(name="service")
     private String service;
+
+
 
 
     public AuthorityType() {
