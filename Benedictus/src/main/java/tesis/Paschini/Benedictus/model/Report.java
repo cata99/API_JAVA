@@ -9,7 +9,7 @@ import java.util.Date;
 public class Report {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "description", nullable = false)
     private String description;

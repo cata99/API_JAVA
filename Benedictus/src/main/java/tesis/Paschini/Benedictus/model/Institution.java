@@ -8,13 +8,13 @@ import javax.persistence.*;
 public class Institution {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "phone", nullable = false, unique = true)
+    @Column(name = "phone")
     private String phone;
-    @Column(name="name", nullable = false)
+    @Column(name="name")
     private String name;
-    @Column(name = "location", nullable = false, unique = true)
+    @Column(name = "location")
     private String location;
     @Column(name = "description")
     private String description;

@@ -15,8 +15,14 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
+    @GetMapping
     public List<Product> getAllProducts(){
         return productRepository.findAll();
+    }
+
+    @PostMapping
+    public Product createProducts(@RequestBody Product product){
+        return productRepository.save(product);
     }
 
 }

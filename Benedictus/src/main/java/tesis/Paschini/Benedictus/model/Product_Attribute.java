@@ -7,18 +7,23 @@ import javax.persistence.*;
 public class Product_Attribute {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @MapsId
+    @JoinColumn(name="product_id")
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "attribute_id")
+    @MapsId("attribute_id")
     private Attribute attribute;
 
+    @Column(name="quantity")
     private Long quantity;
+
+    public Product_Attribute() {
+    }
 
     public Product_Attribute(Long id, Product product, Attribute attribute, Long quantity) {
         this.id = id;

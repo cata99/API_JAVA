@@ -8,7 +8,7 @@ import java.util.Date;
 public class LifeEvent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="date")
     private Date date;

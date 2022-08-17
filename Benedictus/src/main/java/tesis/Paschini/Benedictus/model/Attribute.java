@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Attribute {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="field")
     private String field;

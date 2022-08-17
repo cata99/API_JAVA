@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name="donation")
 public class Donation {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name="creation_date")

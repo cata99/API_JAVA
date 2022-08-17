@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Institution_Disease {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

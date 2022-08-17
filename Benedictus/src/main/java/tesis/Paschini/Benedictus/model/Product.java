@@ -7,15 +7,17 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name="label")
     private String label;
 
+
     @ManyToOne
     @JoinColumn(name = "product_type_id")
     private ProductType productType;
+
 
     public Product() {
     }
