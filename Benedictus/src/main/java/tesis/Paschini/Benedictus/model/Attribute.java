@@ -15,7 +15,6 @@ public class Attribute {
     @Column(name="unit")
     private String unit;
 
-
     public Attribute() {
     }
 
