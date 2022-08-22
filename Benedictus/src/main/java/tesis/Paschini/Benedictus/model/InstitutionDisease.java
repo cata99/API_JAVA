@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="institution_disease")
-public class Institution_Disease {
+public class InstitutionDisease {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,10 @@ public class Institution_Disease {
     @JoinColumn(name = "disease_id")
     private Disease disease;
 
-    public Institution_Disease() {
+    public InstitutionDisease() {
     }
 
-    public Institution_Disease(Long id, Institution institution, Disease disease) {
+    public InstitutionDisease(Long id, Institution institution, Disease disease) {
         this.id = id;
         this.institution = institution;
         this.disease = disease;

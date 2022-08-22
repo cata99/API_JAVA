@@ -45,6 +45,7 @@ public class UserController {
         updateUser.setPassword(user.getPassword());
         updateUser.setPersonalInformation(user.getPersonalInformation());
         updateUser.setToken(user.getToken());
+        updateUser.setRolesSet(user.getRolesSet());
 
         userRepository.save(updateUser);
         return ResponseEntity.ok(updateUser);

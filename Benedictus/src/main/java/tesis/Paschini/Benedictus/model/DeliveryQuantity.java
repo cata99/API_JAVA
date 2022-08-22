@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="Delivery_Quantity")
-public class Delivery_Quantity {
+@Table(name="DeliveryQuantity")
+public class DeliveryQuantity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,23 @@ public class Delivery_Quantity {
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
-    public Delivery_Quantity() {
+    @ManyToOne
+    @JoinColumn(name = "donation_product_id")
+    private DonationProduct donationProduct;
+    
+    @Column(name="quantity")
+    private Long quantity;
+
+    public DonationProduct getDonationProduct() {
+        return donationProduct;
+    }
+
+    public void setDonationProduct(DonationProduct donationProduct) {
+        this.donationProduct = donationProduct;
+    }
+
+
+    public DeliveryQuantity() {
     }
 
 

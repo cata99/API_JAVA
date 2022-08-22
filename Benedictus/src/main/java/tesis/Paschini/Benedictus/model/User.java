@@ -2,6 +2,8 @@ package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -30,7 +32,28 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
+    //TODO fede queres ver esto? porque no se si esta la bien hecha la relacion
+    @ManyToMany(cascade = {
+            CascadeType.ALL
+    })
+    @JoinTable(
+            name = "User_Role",
+            joinColumns = {
+                    @JoinColumn(name = "user_id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "role_id")
+            }
+    )
+    Set<Role> rolesSet = new HashSet<Role>();
 
+    public Set<Role> getRolesSet() {
+        return rolesSet;
+    }
+
+    public void setRolesSet(Set<Role> rolesSet) {
+        this.rolesSet = rolesSet;
+    }
     @Column(name = "active", nullable = false)
     private Boolean active;
 

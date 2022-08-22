@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="donation_product")
-public class Donation_Product {
+public class DonationProduct {
 
 
     @Id
@@ -22,10 +22,10 @@ public class Donation_Product {
     @Column(name="quantity")
     private Long quantity;
 
-    public Donation_Product() {
+    public DonationProduct() {
     }
 
-    public Donation_Product(Long id, Product product, Donation donation, Long quantity) {
+    public DonationProduct(Long id, Product product, Donation donation, Long quantity) {
         this.id = id;
         this.product = product;
         this.donation = donation;
