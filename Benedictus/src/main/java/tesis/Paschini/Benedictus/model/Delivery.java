@@ -1,11 +1,14 @@
 package tesis.Paschini.Benedictus.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
 
 @Entity
 @Table(name="delivery")
+@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 public class Delivery {
 
     @Id

@@ -5,20 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1514b003-bdaf-401b-8f58-293cd80fa5e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/Product_AttributeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/ProductAttribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/Product_AttributeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/API_JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/API_JAVA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Attribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Attribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery_Quantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery_Quantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Product_Attribute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/Product_AttributeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ProductAttributeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/Product_AttributeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/ProductAttributeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Attribute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Attribute.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Product_Attribute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/Product_AttributeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Delivery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Delivery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/Product_AttributeRepository.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,19 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/cata/Documents/2022/Trabajo_Final/API_JAVA/Benedictus",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.haulmont.jpb.dbDrivers"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cata/Documents/2022/Trabajo_Final/API_JAVA/Benedictus&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.haulmont.jpb.dbDrivers&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.BenedictusApplication">
     <configuration name="BenedictusApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tesis.Paschini.Benedictus.BenedictusApplication" />
@@ -153,22 +153,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/Product_AttributeController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/Product_AttributeController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
