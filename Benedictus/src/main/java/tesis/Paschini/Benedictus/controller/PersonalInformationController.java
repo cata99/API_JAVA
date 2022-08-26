@@ -31,7 +31,7 @@ public class PersonalInformationController {
     }
 
     @PostMapping
-    public PersonalInformation createPersonalInformation(@PathVariable PersonalInformation personalInformation){
+    public PersonalInformation createPersonalInformation(@RequestBody PersonalInformation personalInformation){
         return personalInformationRepository.save(personalInformation);
     }
 
