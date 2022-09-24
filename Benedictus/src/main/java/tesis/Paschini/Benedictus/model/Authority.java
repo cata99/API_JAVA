@@ -16,10 +16,6 @@ public class Authority {
     @Column(name = "location", nullable = false, unique = true)
     private String location;
 
-    @ManyToOne
-    @JoinColumn(name = "authority_type_id")
-    private AuthorityType authorityType;
-
     public Authority() {
     }
 
@@ -29,14 +25,6 @@ public class Authority {
         this.phone = phone;
         this.location = location;
 
-    }
-
-    public AuthorityType getAuthorityType() {
-        return authorityType;
-    }
-
-    public void setAuthorityType(AuthorityType authorityType) {
-        this.authorityType = authorityType;
     }
 
     public Long getId() {

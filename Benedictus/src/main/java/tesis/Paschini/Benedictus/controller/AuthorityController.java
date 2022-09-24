@@ -38,7 +38,6 @@ public class AuthorityController {
     public ResponseEntity<Authority> updateAuthority(@PathVariable long id, @RequestBody Authority authority){
         Authority updateAuthority= authorityRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
-        updateAuthority.setAuthorityType(authority.getAuthorityType());
         updateAuthority.setLocation(authority.getLocation());
         updateAuthority.setPhone(authority.getPhone());
         updateAuthority.setLabel(authority.getLabel());

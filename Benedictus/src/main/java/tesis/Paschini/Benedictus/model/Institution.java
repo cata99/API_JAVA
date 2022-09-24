@@ -4,7 +4,7 @@ package tesis.Paschini.Benedictus.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="institutions")
+@Table(name = "institutions")
 public class Institution {
 
     @Id
@@ -12,23 +12,19 @@ public class Institution {
     private Long id;
     @Column(name = "phone")
     private String phone;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
     @Column(name = "location")
     private String location;
-    @Column(name = "description")
-    private String description;
-
 
     public Institution() {
     }
 
-    public Institution(Long id, String phone, String name, String location, String description) {
+    public Institution(Long id, String phone, String name, String location) {
         this.id = id;
         this.phone = phone;
         this.name = name;
         this.location = location;
-        this.description = description;
     }
 
     public Long getId() {
@@ -63,11 +59,4 @@ public class Institution {
         this.location = location;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

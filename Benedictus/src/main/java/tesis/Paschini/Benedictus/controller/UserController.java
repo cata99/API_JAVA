@@ -7,7 +7,9 @@ import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.model.User;
 import tesis.Paschini.Benedictus.repository.UserRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
@@ -21,7 +23,17 @@ public class UserController {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+    @GetMapping("all")
+    public ResponseEntity<Map<String, Object>> countUsers() {
 
+        long amount= userRepository.count();
+
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("count", amount
+        );
+
+        return ResponseEntity.ok(payload);
+    }
     @GetMapping("{id}")
     public ResponseEntity<User> getAttributeById(@PathVariable long id) {
         User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
