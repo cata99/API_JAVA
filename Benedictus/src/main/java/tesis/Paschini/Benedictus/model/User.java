@@ -2,8 +2,6 @@ package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,82 +14,46 @@ public class User {
     private Boolean referent;
     @Column(name = "date_of_start")
     private Date dateOfStart;
-    @Column(name = "user", nullable = false, unique = true)
-    private String user;
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
     @Column(name = "password", nullable = false, unique = true)
     private String password;
     @Column(name = "token", nullable = false, unique = true)
     private String token;
     @Column(name = "expirationDate")
     private Date expirationDate;
-
     @OneToOne
     @JoinColumn(name = "personal_information_id")
     private PersonalInformation personalInformation;
-
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
-    //TODO fede queres ver esto? porque no se si esta la bien hecha la relacion
-    @ManyToMany(cascade = {
-            CascadeType.ALL
-    })
-    @JoinTable(
-            name = "User_Role",
-            joinColumns = {
-                    @JoinColumn(name = "user_id")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "role_id")
-            }
-    )
-    Set<Role> rolesSet = new HashSet<Role>();
 
-    public Set<Role> getRolesSet() {
-        return rolesSet;
-    }
-
-    public void setRolesSet(Set<Role> rolesSet) {
-        this.rolesSet = rolesSet;
-    }
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
     @Column(name = "active", nullable = false)
     private Boolean active;
-
-    //TODO falta relacion con roles
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
-
-    public PersonalInformation getPersonalInformation() {
-        return personalInformation;
-    }
-
-    public void setPersonalInformation(PersonalInformation personalInformation) {
-        this.personalInformation = personalInformation;
-    }
-
     public User() {
     }
-
-    public User(Long id, Boolean referent, Date dateOfStart , String user, String password) {
+    public User(Long id, Boolean referent, Date dateOfStart, String username, String password, PersonalInformation personalInformation, Group group, Role role, Boolean active) {
         this.id = id;
         this.referent = referent;
         this.dateOfStart = dateOfStart;
-        this.user = user;
+        this.username = username;
         this.password = password;
+        this.personalInformation = personalInformation;
+        this.group = group;
+        this.role = role;
+        this.active = active;
+    }
 
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-    public Long getId() {
-        return id;
     }
 
     public Boolean getReferent() {
@@ -110,12 +72,12 @@ public class User {
         this.dateOfStart = dateOfStart;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -141,6 +103,31 @@ public class User {
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
+
+    public PersonalInformation getPersonalInformation() {
+        return personalInformation;
+    }
+
+    public void setPersonalInformation(PersonalInformation personalInformation) {
+        this.personalInformation = personalInformation;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     public Boolean getActive() {
         return active;
     }
@@ -148,4 +135,5 @@ public class User {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
 }

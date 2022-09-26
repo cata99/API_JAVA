@@ -3,7 +3,7 @@ package tesis.Paschini.Benedictus.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="people")
+@Table(name="personal_information")
 public class PersonalInformation {
 
     @Id
@@ -19,8 +19,17 @@ public class PersonalInformation {
     private String identificationNumber;
     @Column(name = "gender")
     private String gender;
+
     @Column(name="email")
     private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public PersonalInformation() {
     }
@@ -32,7 +41,7 @@ public class PersonalInformation {
         this.phone = phone;
         this.identificationNumber = identificationNumber;
         this.gender = gender;
-        this.email = email;
+        this.email= email;
     }
 
     public Long getId() {
@@ -82,11 +91,4 @@ public class PersonalInformation {
         this.gender = gender;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

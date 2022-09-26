@@ -5,26 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1514b003-bdaf-401b-8f58-293cd80fa5e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_core_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_json_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_jaxrs_1_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_xc_1_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_7_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/MethodUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/config/JwtTokenConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/config/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/config/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/config/SpringSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/Impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/Impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/API_JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/API_JAVA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AuthorityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DeliveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DeliveryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DonationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/DonationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/InstitutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/InstitutionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ProductTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/ProductTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Benedictus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Benedictus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/BenedictusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/BenedictusApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/PersonalInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/PersonalInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/RoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Institution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Institution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AuthorityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/AuthorityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/InstitutionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/InstitutionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/AuthorityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/AuthorityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/InstitutionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/InstitutionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/ProductTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/ProductTypeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Authority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Institution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Institution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/PersonalInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/PersonalInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/PersonalInformationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/PersonalInformationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/BenedictusApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/BenedictusApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/PersonalInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/PersonalInformationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/PersonalInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/PersonalInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/repository/UserRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +74,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JpbToolWindowState">
@@ -92,8 +134,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tesis.Paschini.Benedictus" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.BenedictusApplication">
     <configuration name="BenedictusApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tesis.Paschini.Benedictus.BenedictusApplication" />
+      <module name="Benedictus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tesis.Paschini.Benedictus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tesis.Paschini.Benedictus.BenedictusApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tesis.Paschini.Benedictus.BenedictusApplication" />
       <module name="Benedictus" />
       <extension name="coverage">
@@ -131,6 +191,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BenedictusApplication" />
+        <item itemvalue="Application.tesis.Paschini.Benedictus.BenedictusApplication" />
+        <item itemvalue="Application.tesis.Paschini.Benedictus.BenedictusApplication" />
+        <item itemvalue="Application.BenedictusApplication" />
         <item itemvalue="Application.BenedictusApplication" />
       </list>
     </recent_temporary>

@@ -1,52 +1,30 @@
 package tesis.Paschini.Benedictus.model;
 
-
 import javax.persistence.*;
-import java.util.HashSet;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
 @Table(name="roles")
 public class Role {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
-    @Column(name="label", unique = true, nullable = false)
-    private String label;
+    private String name;
 
-    @ManyToMany(mappedBy = "rolesSet", cascade = { CascadeType.ALL })
-    private Set<User>  userSet = new HashSet<User>();
+    @OneToMany(targetEntity = User.class, mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<User> users;
+
     public Role() {
     }
 
-    public Set<User> getUserSet() {
-        return userSet;
-    }
-
-    public void setUserSet(Set<User> userSet) {
-        this.userSet = userSet;
-    }
-
-
-    public void setId(Long id) {
+    public Role(Long id, @NotNull String name) {
         this.id = id;
+        this.name = name;
     }
 
-    public Role(Long id, String label) {
-        this.id = id;
-        this.label = label;
-    }
-    public Long getId() {
-        return id;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
+    public String getName() {
+        return name;
     }
 
 }

@@ -41,7 +41,6 @@ public class PersonalInformationController {
 
         updatePersonalInformation.setFirstName(personalInformation.getFirstName());
         updatePersonalInformation.setLastName(personalInformation.getLastName());
-        updatePersonalInformation.setEmail(personalInformation.getEmail());
         updatePersonalInformation.setGender(personalInformation.getGender());
         updatePersonalInformation.setPhone(personalInformation.getPhone());
         updatePersonalInformation.setIdentificationNumber(personalInformation.getIdentificationNumber());
