@@ -3,7 +3,7 @@ package tesis.Paschini.Benedictus.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="people")
+@Table(name="personal_information")
 public class PersonalInformation {
 
     @Id
@@ -25,8 +25,7 @@ public class PersonalInformation {
     public PersonalInformation() {
     }
 
-    public PersonalInformation(Long id, String firstName, String lastName, String phone, String identificationNumber, String gender, String email) {
-        this.id = id;
+    public PersonalInformation( String firstName, String lastName, String phone, String identificationNumber, String gender, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;

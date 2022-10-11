@@ -33,13 +33,12 @@ public class RoleController {
     public Role createRole(@RequestBody Role role){
         return roleRepository.save(role);
     }
-
+/*TODO ver este metodo*/
     @PutMapping("{id}")
     public ResponseEntity<Role>  updateRole(@PathVariable long id,@RequestBody Role role){
         Role updateRole= roleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
-        updateRole.setLabel(role.getLabel());
-        updateRole.setUserSet(role.getUserSet());
+        updateRole.setName(role.getName());
 
         roleRepository.save(updateRole);
 

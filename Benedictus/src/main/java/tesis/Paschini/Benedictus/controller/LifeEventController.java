@@ -47,3 +47,4 @@ public class LifeEventController {
         return ResponseEntity.ok(updateLifeEvent);
     }
 }
+

@@ -1,6 +1,8 @@
 package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,14 +18,12 @@ public class User {
     private Boolean referent;
     @Column(name = "date_of_start")
     private Date dateOfStart;
-    @Column(name = "user", nullable = false, unique = true)
-    private String user;
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
     @Column(name = "password", nullable = false, unique = true)
+    @NotBlank
+    @Size(max = 120)
     private String password;
-    @Column(name = "token", nullable = false, unique = true)
-    private String token;
-    @Column(name = "expirationDate")
-    private Date expirationDate;
 
     @OneToOne
     @JoinColumn(name = "personal_information_id")
@@ -32,32 +32,35 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
-    //TODO fede queres ver esto? porque no se si esta la bien hecha la relacion
-    @ManyToMany(cascade = {
-            CascadeType.ALL
-    })
-    @JoinTable(
-            name = "User_Role",
-            joinColumns = {
-                    @JoinColumn(name = "user_id")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "role_id")
-            }
-    )
-    Set<Role> rolesSet = new HashSet<Role>();
 
-    public Set<Role> getRolesSet() {
-        return rolesSet;
-    }
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(  name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
 
-    public void setRolesSet(Set<Role> rolesSet) {
-        this.rolesSet = rolesSet;
-    }
     @Column(name = "active", nullable = false)
     private Boolean active;
 
-    //TODO falta relacion con roles
+    public User() {
+    }
+    public User(Boolean referent, Date dateOfStart, String username, String password, PersonalInformation personalInformation, Group group, Boolean active) {
+        this.referent = referent;
+        this.dateOfStart = dateOfStart;
+        this.username = username;
+        this.password = password;
+        this.personalInformation = personalInformation;
+        this.group = group;
+        this.active = active;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public Group getGroup() {
         return group;
@@ -73,18 +76,6 @@ public class User {
 
     public void setPersonalInformation(PersonalInformation personalInformation) {
         this.personalInformation = personalInformation;
-    }
-
-    public User() {
-    }
-
-    public User(Long id, Boolean referent, Date dateOfStart , String user, String password) {
-        this.id = id;
-        this.referent = referent;
-        this.dateOfStart = dateOfStart;
-        this.user = user;
-        this.password = password;
-
     }
 
     public void setId(Long id) {
@@ -110,12 +101,12 @@ public class User {
         this.dateOfStart = dateOfStart;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -126,21 +117,6 @@ public class User {
         this.password = password;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Date getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(Date expirationDate) {
-        this.expirationDate = expirationDate;
-    }
     public Boolean getActive() {
         return active;
     }

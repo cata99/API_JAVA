@@ -40,24 +40,17 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userRepository.save(user);
-    }
 
     @PutMapping
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user){
         User updateUser = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
-        updateUser.setUser(user.getUser());
+        updateUser.setUsername(user.getUsername());
         updateUser.setActive(user.getActive());
         updateUser.setDateOfStart(user.getDateOfStart());
         updateUser.setGroup(user.getGroup());
-        updateUser.setExpirationDate(user.getExpirationDate());
         updateUser.setPassword(user.getPassword());
         updateUser.setPersonalInformation(user.getPersonalInformation());
-        updateUser.setToken(user.getToken());
-        updateUser.setRolesSet(user.getRolesSet());
 
         userRepository.save(updateUser);
         return ResponseEntity.ok(updateUser);

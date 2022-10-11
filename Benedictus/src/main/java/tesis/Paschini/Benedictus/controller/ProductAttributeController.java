@@ -34,7 +34,17 @@ public class ProductAttributeController {
         return productAttributeRepository.save(productAttribute);
     }
 
-    //TODO ver si se tiene que hacer el update
+    @PutMapping("{id}")
+    public ResponseEntity<ProductAttribute> updateLifeEvent(@PathVariable long id, @RequestBody ProductAttribute productAttribute){
+        ProductAttribute updateProductAttribute = productAttributeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
+
+        updateProductAttribute.setAttribute(productAttribute.getAttribute());
+        updateProductAttribute.setProduct(productAttribute.getProduct());
+        updateProductAttribute.setValue(productAttribute.getValue());
+
+
+        return ResponseEntity.ok(updateProductAttribute);
+    }
 
 
 }
