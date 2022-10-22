@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.model.Disease;
 import tesis.Paschini.Benedictus.repository.DiseaseRepository;
+import tesis.Paschini.Benedictus.repository.InstitutionDiseaseRepository;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class DiseaseController {
 
     @Autowired
     DiseaseRepository diseaseRepository;
+    @Autowired
+    InstitutionDiseaseRepository institutionDiseaseRepository;
 
     @GetMapping
     public List<Disease> getAllDisease(){ return diseaseRepository.findAll();}

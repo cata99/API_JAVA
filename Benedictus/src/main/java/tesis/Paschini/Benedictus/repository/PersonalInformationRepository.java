@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface PersonalInformationRepository extends JpaRepository<PersonalInformation, Long> {
 
-    @Query(value = "select p from PersonalInformation, User WHERE PersonalInformation.id NOT IN User.personalInformation.id")
+    @Query("from PersonalInformation where id not in (select personalInformation from User)")
     List<PersonalInformation> getPersonalInformation();
 }

@@ -1,10 +1,13 @@
 package tesis.Paschini.Benedictus.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="donation")
+@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 public class Donation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +42,14 @@ public class Donation {
         this.institution = institution;
         this.user = user;
         this.personalInformation = personalInformation;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getCreationDate() {

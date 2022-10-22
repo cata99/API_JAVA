@@ -18,13 +18,15 @@ public class DonationController {
     @Autowired
     DonationRepository donationRepository;
 
-    public List<Donation> getAllDonation(){
+    @GetMapping
+    public List<Donation> getAllDonation() {
         return donationRepository.findAll();
     }
+
     @GetMapping("all")
     public ResponseEntity<Map<String, Object>> countDonations() {
 
-        long amount= donationRepository.count();
+        long amount = donationRepository.count();
 
         Map<String, Object> payload = new HashMap<>();
         payload.put("count", amount
