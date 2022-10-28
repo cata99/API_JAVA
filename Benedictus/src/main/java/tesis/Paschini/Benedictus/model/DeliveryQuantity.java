@@ -11,31 +11,35 @@ public class DeliveryQuantity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @ManyToOne
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
     @ManyToOne
-    @JoinColumn(name = "donation_product_id")
-    private DonationProduct donationProduct;
+    @JoinColumn(name = "product_id")
+    private Product product;
     
     @Column(name="quantity")
     private Long quantity;
 
-    public DonationProduct getDonationProduct() {
-        return donationProduct;
-    }
-
-    public void setDonationProduct(DonationProduct donationProduct) {
-        this.donationProduct = donationProduct;
-    }
-
-
     public DeliveryQuantity() {
     }
 
+    public Product getProduct() {
+        return product;
+    }
 
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
+    }
 
     public Long getId() {
         return id;
