@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
+import tesis.Paschini.Benedictus.model.Donation;
 import tesis.Paschini.Benedictus.model.DonationProduct;
 import tesis.Paschini.Benedictus.repository.DonationProductRepository;
+import tesis.Paschini.Benedictus.repository.DonationRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -16,6 +19,9 @@ public class DonationProductController {
 
     @Autowired
     DonationProductRepository donationProductRepository;
+
+    @Autowired
+    DonationRepository donationRepository;
 
     @GetMapping
     public List<DonationProduct> getAllDonationProducts(){
@@ -27,6 +33,15 @@ public class DonationProductController {
         DonationProduct donationProduct = donationProductRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
         return ResponseEntity.ok(donationProduct);
+    }
+
+    @GetMapping("products/{id}")
+    public List<DonationProduct> getProducts(@PathVariable long id){
+
+        Optional<Donation> donation = donationRepository.findById(id);
+        return donationProductRepository.getProductsByDonation(donation);
+
+
     }
 
     @PostMapping

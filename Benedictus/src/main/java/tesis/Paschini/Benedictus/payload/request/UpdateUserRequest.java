@@ -1,6 +1,5 @@
 package tesis.Paschini.Benedictus.payload.request;
 
-
 import tesis.Paschini.Benedictus.model.Group;
 import tesis.Paschini.Benedictus.model.PersonalInformation;
 
@@ -9,7 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Set;
 
-public class SignupRequest {
+public class UpdateUserRequest {
 
     // Personal Information data
     private PersonalInformation personalInformation;

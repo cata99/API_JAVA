@@ -86,17 +86,18 @@ public class AuthController {
         }
         Group group = signUpRequest.getGroup();
 
-        // Create new users personal info
-        PersonalInformation personalInformation = new PersonalInformation(signUpRequest.getFirstName(), signUpRequest.getLastName(), signUpRequest.getPhone(), signUpRequest.getIdentificationNumber(), signUpRequest.getGender(), signUpRequest.getEmail());
-        PersonalInformation personalInformationSaved = personalInformationRepository.save(personalInformation);
-
-
+        if(!personalInformationRepository.existsById(signUpRequest.getPersonalInformation().getId())){
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Personal Information does not exist"));
+        }
+        PersonalInformation personalInformation = signUpRequest.getPersonalInformation();
 
         Date date=  new Date();
 
         // Create new user's account
-        User user = new User(signUpRequest.getReferent(),date, signUpRequest.getUsername(),
-                encoder.encode(signUpRequest.getPassword()),personalInformationSaved,group, true);
+        User user = new User(date, signUpRequest.getUsername(),
+                encoder.encode(signUpRequest.getPassword()),personalInformation,group, true);
 
 
         Set<String> strRoles = signUpRequest.getRole();

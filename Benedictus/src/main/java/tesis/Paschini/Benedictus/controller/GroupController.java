@@ -37,7 +37,12 @@ public class    GroupController {
         Group updateGroup = groupRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
         updateGroup.setLabel(group.getLabel());
-        updateGroup.setInstitution(group.getInstitution());
+        if(group.getInstitution() == null){
+            updateGroup.setInstitution(updateGroup.getInstitution());
+        }else {
+            updateGroup.setInstitution(group.getInstitution());
+        }
+
 
         groupRepository.save(updateGroup);
 

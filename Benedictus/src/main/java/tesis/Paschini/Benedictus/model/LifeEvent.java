@@ -1,7 +1,6 @@
 package tesis.Paschini.Benedictus.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="life_events")
@@ -11,7 +10,7 @@ public class LifeEvent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="date")
-    private Date date;
+    private String date;
     @Column(name="label")
     private String label;
 
@@ -30,10 +29,19 @@ public class LifeEvent {
     public LifeEvent() {
     }
 
-    public LifeEvent(Long id, Date date, String label) {
+    public LifeEvent(Long id, String date, String label, PersonalInformation personalInformation) {
         this.id = id;
         this.date = date;
         this.label = label;
+        this.personalInformation = personalInformation;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Long getId() {
@@ -43,15 +51,6 @@ public class LifeEvent {
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
 
     public String getLabel() {
         return label;

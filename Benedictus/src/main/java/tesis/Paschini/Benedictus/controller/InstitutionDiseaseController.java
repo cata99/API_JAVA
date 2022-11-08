@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
+import tesis.Paschini.Benedictus.model.Institution;
 import tesis.Paschini.Benedictus.model.InstitutionDisease;
 import tesis.Paschini.Benedictus.repository.InstitutionDiseaseRepository;
+import tesis.Paschini.Benedictus.repository.InstitutionRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -17,9 +20,21 @@ public class InstitutionDiseaseController {
     @Autowired
     InstitutionDiseaseRepository institutionDiseaseRepository;
 
+    @Autowired
+    InstitutionRepository institutionRepository;
+
     @GetMapping
     public List<InstitutionDisease> getAllInstitutionDisease(){
         return institutionDiseaseRepository.findAll();
+    }
+
+    @GetMapping("diseases/{id}")
+    public List<InstitutionDisease> getDiseases(@PathVariable long id){
+
+        Optional<Institution> institution = institutionRepository.findById(id);
+        return institutionDiseaseRepository.getDiseasesByInstitution(institution);
+
+
     }
 
     @GetMapping("{id}")

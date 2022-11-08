@@ -72,7 +72,7 @@ public class WebSecurityConfig {
                 .antMatchers("/api/authorities/**").permitAll()
                 // Delivery Controller
                 .antMatchers(HttpMethod.GET, "/api/deliveries/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/api/deliveries/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST,"/api/deliveries/**").hasAnyRole("REFERENTE", "ADMIN")
                 .antMatchers(HttpMethod.PUT,"/api/deliveries/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE,"/api/deliveries/**").hasRole("ADMIN")
                 //Disease Controller

@@ -5,12 +5,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import tesis.Paschini.Benedictus.model.Delivery;
 import tesis.Paschini.Benedictus.model.DeliveryQuantity;
 import tesis.Paschini.Benedictus.model.Product;
 import tesis.Paschini.Benedictus.repository.DeliveryQuantityRepository;
+import tesis.Paschini.Benedictus.repository.DeliveryRepository;
 import tesis.Paschini.Benedictus.repository.DonationProductRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -22,6 +25,18 @@ public class DeliveryQuantityController {
 
     @Autowired
     DonationProductRepository donationProductRepository;
+
+    @Autowired
+    DeliveryRepository deliveryRepository;
+
+    @GetMapping("products/{id}")
+    public List<DeliveryQuantity> getProducts(@PathVariable long id){
+
+        Optional<Delivery> delivery = deliveryRepository.findById(id);
+        return deliveryQuantityRepository.getProductsByDelivery(delivery);
+
+
+    }
 
     @GetMapping
     public List<DeliveryQuantity> findAll() {

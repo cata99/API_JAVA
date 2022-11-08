@@ -12,4 +12,7 @@ public interface PersonalInformationRepository extends JpaRepository<PersonalInf
 
     @Query("from PersonalInformation where id not in (select personalInformation from User)")
     List<PersonalInformation> getPersonalInformation();
+
+    @Query("select id from PersonalInformation where id not in (select personalInformation from User)")
+    List<Long> getPersonalInformationIds();
 }

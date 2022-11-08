@@ -26,6 +26,9 @@ public class PersonalInformationController {
     @GetMapping("donors")
     public List<PersonalInformation> getDonors(){return personalInformationRepository.getPersonalInformation();}
 
+    @GetMapping("donors_id")
+    public List<Long> getDonorsId(){return personalInformationRepository.getPersonalInformationIds();}
+
     @GetMapping("{id}")
     public ResponseEntity<PersonalInformation> getPersonalInformationById(@PathVariable long id){
         PersonalInformation personalInformation = personalInformationRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));

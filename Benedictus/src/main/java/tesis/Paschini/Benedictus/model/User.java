@@ -9,13 +9,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class
+User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "referent")
-    private Boolean referent;
     @Column(name = "date_of_start")
     private Date dateOfStart;
     @Column(name = "username", nullable = false, unique = true)
@@ -29,23 +28,23 @@ public class User {
     @JoinColumn(name = "personal_information_id")
     private PersonalInformation personalInformation;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER, optional=true, cascade=CascadeType.MERGE)
     @JoinColumn(name = "group_id")
     private Group group;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(  name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> role = new HashSet<>();
 
     @Column(name = "active", nullable = false)
     private Boolean active;
 
     public User() {
     }
-    public User(Boolean referent, Date dateOfStart, String username, String password, PersonalInformation personalInformation, Group group, Boolean active) {
-        this.referent = referent;
+    public User( Date dateOfStart, String username, String password, PersonalInformation personalInformation, Group group, Boolean active) {
+
         this.dateOfStart = dateOfStart;
         this.username = username;
         this.password = password;
@@ -55,11 +54,11 @@ public class User {
     }
 
     public Set<Role> getRoles() {
-        return roles;
+        return role;
     }
 
     public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+        this.role = roles;
     }
 
     public Group getGroup() {
@@ -85,13 +84,7 @@ public class User {
         return id;
     }
 
-    public Boolean getReferent() {
-        return referent;
-    }
 
-    public void setReferent(Boolean referent) {
-        this.referent = referent;
-    }
 
     public Date getDateOfStart() {
         return dateOfStart;

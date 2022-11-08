@@ -3,7 +3,6 @@ package tesis.Paschini.Benedictus.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="donation")
@@ -14,28 +13,27 @@ public class Donation {
     private Long id;
 
     @Column(name="creation_date")
-    private Date creationDate;
+    private String creationDate;
 
     @Column(name="update_date")
-    private Date updateDate;
+    private String updateDate;
 
-
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "institution_id")
     private Institution institution;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "personal_information_id")
     private PersonalInformation personalInformation;
 
     public Donation (){
     }
 
-    public Donation(Long id, Date creationDate, Date updateDate, Institution institution, User user, PersonalInformation personalInformation) {
+    public Donation(Long id, String creationDate, String updateDate, Institution institution, User user, PersonalInformation personalInformation) {
         this.id = id;
         this.creationDate = creationDate;
         this.updateDate = updateDate;
@@ -52,20 +50,21 @@ public class Donation {
         this.id = id;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
-    }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Date getUpdateDate() {
+    public String getUpdateDate() {
         return updateDate;
     }
 
-    public void setUpdateDate(Date updateDate) {
+    public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
     }
 
     public Institution getInstitution() {
@@ -91,4 +90,6 @@ public class Donation {
     public void setPersonalInformation(PersonalInformation personalInformation) {
         this.personalInformation = personalInformation;
     }
+
+
 }

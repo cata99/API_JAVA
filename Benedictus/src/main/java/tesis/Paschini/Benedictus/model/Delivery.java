@@ -3,7 +3,6 @@ package tesis.Paschini.Benedictus.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.util.Date;
 
 
 @Entity
@@ -16,7 +15,7 @@ public class Delivery {
     private Long id;
 
     @Column(name="date")
-    private Date date;
+    private String date;
 
     @ManyToOne
     @JoinColumn(name = "institution_id")
@@ -29,7 +28,7 @@ public class Delivery {
     public Delivery() {
     }
 
-    public Delivery(Long id, Date date, Institution institution, User user) {
+    public Delivery(Long id, String date, Institution institution, User user) {
         this.id = id;
         this.date = date;
         this.institution = institution;
@@ -44,11 +43,11 @@ public class Delivery {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

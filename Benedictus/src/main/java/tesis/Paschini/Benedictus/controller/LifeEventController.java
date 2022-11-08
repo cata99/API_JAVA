@@ -5,9 +5,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.model.LifeEvent;
+import tesis.Paschini.Benedictus.model.PersonalInformation;
+import tesis.Paschini.Benedictus.model.User;
 import tesis.Paschini.Benedictus.repository.LifeEventRepository;
+import tesis.Paschini.Benedictus.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
@@ -17,6 +21,8 @@ public class LifeEventController {
     @Autowired
     LifeEventRepository lifeEventRepository;
 
+    @Autowired
+    UserRepository userRepository;
     @GetMapping
     public List<LifeEvent> getAllLifeEvents(){
         return lifeEventRepository.findAll();
@@ -26,6 +32,17 @@ public class LifeEventController {
     public ResponseEntity<LifeEvent> getLifeEventById(@PathVariable long id){
         LifeEvent lifeEvent = lifeEventRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
         return  ResponseEntity.ok(lifeEvent);
+    }
+
+    @GetMapping("user/{id}")
+    public List<LifeEvent> getLifeEvents(@PathVariable long id) {
+
+        Optional<User> user = userRepository.findById(id);
+        PersonalInformation personalInformation = user.get().getPersonalInformation();
+        List<LifeEvent> lifeEvents = lifeEventRepository.getLifeEventsByUser(Optional.ofNullable(personalInformation));
+        return lifeEvents;
+
+
     }
 
 
