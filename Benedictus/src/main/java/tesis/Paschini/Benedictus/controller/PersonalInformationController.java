@@ -19,37 +19,45 @@ public class PersonalInformationController {
     PersonalInformationRepository personalInformationRepository;
 
     @GetMapping
-    public List<PersonalInformation> getAllPersonalInformation(){
+    public List<PersonalInformation> getAllPersonalInformation() {
         return personalInformationRepository.findAll();
     }
 
     @GetMapping("donors")
-    public List<PersonalInformation> getDonors(){return personalInformationRepository.getPersonalInformation();}
+    public List<PersonalInformation> getDonors() {
+        return personalInformationRepository.getPersonalInformation();
+    }
 
     @GetMapping("donors_id")
-    public List<Long> getDonorsId(){return personalInformationRepository.getPersonalInformationIds();}
+    public List<Long> getDonorsId() {
+        return personalInformationRepository.getPersonalInformationIds();
+    }
 
     @GetMapping("{id}")
-    public ResponseEntity<PersonalInformation> getPersonalInformationById(@PathVariable long id){
+    public ResponseEntity<PersonalInformation> getPersonalInformationById(@PathVariable long id) {
         PersonalInformation personalInformation = personalInformationRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
         return ResponseEntity.ok(personalInformation);
     }
 
     @PostMapping
-    public PersonalInformation createPersonalInformation(@RequestBody PersonalInformation personalInformation){
+    public PersonalInformation createPersonalInformation(@RequestBody PersonalInformation personalInformation) {
         return personalInformationRepository.save(personalInformation);
     }
 
     @PutMapping("{id}")
-    public ResponseEntity updatePersonalInformation(@PathVariable long id, @RequestBody PersonalInformation personalInformation){
+    public ResponseEntity updatePersonalInformation(@PathVariable long id, @RequestBody PersonalInformation personalInformation) {
         PersonalInformation updatePersonalInformation = personalInformationRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 
         updatePersonalInformation.setFirstName(personalInformation.getFirstName());
         updatePersonalInformation.setLastName(personalInformation.getLastName());
         updatePersonalInformation.setEmail(personalInformation.getEmail());
-        updatePersonalInformation.setGender(personalInformation.getGender());
-        updatePersonalInformation.setPhone(personalInformation.getPhone());
+        if (personalInformation.getGender() != null) {
+            updatePersonalInformation.setGender(personalInformation.getGender());
+        } else{
+            updatePersonalInformation.setGender(updatePersonalInformation.getGender());
+        }
+            updatePersonalInformation.setPhone(personalInformation.getPhone());
         updatePersonalInformation.setIdentificationNumber(personalInformation.getIdentificationNumber());
 
         personalInformationRepository.save(updatePersonalInformation);

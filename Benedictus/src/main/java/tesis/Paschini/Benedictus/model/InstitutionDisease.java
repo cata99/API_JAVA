@@ -10,11 +10,11 @@ public class InstitutionDisease {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     @JoinColumn(name = "institution_id")
     private Institution institution;
     
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     @JoinColumn(name = "disease_id")
     private Disease disease;
 
