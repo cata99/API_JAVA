@@ -2,6 +2,7 @@ package tesis.Paschini.Benedictus.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import tesis.Paschini.Benedictus.exception.ResourceNotFoundException;
 import tesis.Paschini.Benedictus.model.*;
@@ -29,6 +30,8 @@ public class UserController {
 
     @Autowired
     RoleRepository roleRepository;
+    @Autowired
+    PasswordEncoder encoder;
 
     @GetMapping
     public List<User> getAllUsers() {
@@ -71,7 +74,7 @@ public class UserController {
         updateUser.setUsername(user.getUsername());
         updateUser.setDateOfStart(user.getDateOfStart());
         updateUser.setGroup(group);
-        updateUser.setPassword(user.getPassword());
+        updateUser.setPassword(encoder.encode(user.getPassword()));
         updateUser.setPersonalInformation(personalInformation);
         Set<String> strRoles = user.getRole();
         Set<Role> roles = new HashSet<>();

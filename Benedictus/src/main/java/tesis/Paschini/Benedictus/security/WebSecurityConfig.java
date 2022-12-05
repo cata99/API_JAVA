@@ -75,6 +75,12 @@ public class WebSecurityConfig {
                 .antMatchers(HttpMethod.POST, "/api/deliveries/**").hasAnyRole("REFERENTE", "ADMIN")
                 .antMatchers(HttpMethod.PUT, "/api/deliveries/**").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/api/deliveries/**").hasRole("ADMIN")
+                //Deliveries quantity controller
+
+                .antMatchers(HttpMethod.GET, "/api/deliveries_quantities/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/deliveries_quantities/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/api/deliveries_quantities/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/api/deliveries_quantities/**").hasRole("ADMIN")
                 //Disease Controller
                 .antMatchers("/api/diseases/**").permitAll()
                 // Donation Controller
@@ -94,17 +100,19 @@ public class WebSecurityConfig {
                 .antMatchers(HttpMethod.DELETE, "/api/groups/**").hasRole("ADMIN")
                 // Institution Controller
                 .antMatchers(HttpMethod.GET, "/api/institutions/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/institutions/").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/api/institutions/**").hasAnyRole("ADMIN", "REFERENTE")
                 .antMatchers(HttpMethod.PUT, "/api/institutions/**").hasAnyRole("ADMIN", "REFERENTE")
                 .antMatchers(HttpMethod.DELETE, "/api/institutions/**").hasRole("ADMIN")
                 // Institution Disease Controller
                 .antMatchers("/api/institutions_disease/**").permitAll()
+                //Institution Authority Controller
+                .antMatchers("/api/institutions_authority/**").permitAll()
                 //Life Event Controller
                 .antMatchers("/api/life_events/**").permitAll()
                 // Personal Information Controller
                 .antMatchers(HttpMethod.GET, "/api/personal_information/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/personal_information/{\\d+}").hasAnyRole("REFERENTE", "ADMIN")
-                .antMatchers(HttpMethod.PUT, "/api/personal_information/{\\d+}").hasAnyRole("REFERENTE", "ADMIN")
+                .antMatchers(HttpMethod.PUT, "/api/personal_information/{\\d+}").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/api/personal_information/{\\d+}").hasAnyRole("REFERENTE", "ADMIN")
                 // Product Controller
                 .antMatchers("/api/products/**").permitAll()
@@ -118,7 +126,7 @@ public class WebSecurityConfig {
                 // Users Controller
                 .antMatchers(HttpMethod.GET, "/api/users/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/users/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/api/users/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/api/users/**").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN");
 
 

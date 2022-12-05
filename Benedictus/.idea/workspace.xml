@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1514b003-bdaf-401b-8f58-293cd80fa5e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/PersonalInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/PersonalInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/InstitutionAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/InstitutionAuthority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/InstitutionDisease.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/model/InstitutionDisease.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/PersonalInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/PersonalInformationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/InstitutionAuthority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/InstitutionAuthority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/InstitutionDisease.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/model/InstitutionDisease.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tesis/Paschini/Benedictus/security/WebSecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,11 +195,6 @@
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tesis/Paschini/Benedictus/controller/AuthController.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
